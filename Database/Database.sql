@@ -10,11 +10,12 @@ Fullname nvarchar(50),
 Username nvarchar(50),
 DOB datetime,
 Userpassword nvarchar(50),
-AdminUser int,
+AdminUser int DEFAULT 0,
 IdentityNumber varchar(10),
 AddressCus nvarchar(50),
 Phone nvarchar(10),
-Email nvarchar(50)
+Email nvarchar(50),
+Gender int
 )
 
 create table Product
@@ -75,16 +76,16 @@ references dbo.Cart(ID)
 
 -- nhap Lieu
  --customer
-INSERT INTO dbo.Customer(FULLNAME, USERNAME,DOB, USERPASSWORD, ADMINUSER, IDENTITYNUMBER, ADDRESSCUS, PHONE,EMAIL) 
-VALUES(N'Nguyễn Văn Anh', 'nvanh','11-20-1997', '123456', 0, '123456789', N'Việt Nam', '0326312355', 'nvanh@gmail.com');
-INSERT INTO dbo.Customer(FULLNAME, USERNAME, DOB,USERPASSWORD, ADMINUSER, IDENTITYNUMBER, ADDRESSCUS, PHONE,EMAIL) 
-VALUES(N'Nguyễn Thành Thắng', 'ntthang','10-08-1998', '123456', 0, '123456777', N'Việt Nam', '0328882355', 'ntthang@gmail.com');
-INSERT INTO dbo.Customer(FULLNAME, USERNAME, DOB,USERPASSWORD, ADMINUSER, IDENTITYNUMBER, ADDRESSCUS, PHONE,EMAIL) 
-VALUES(N'Bùi Anh Nam', 'banam','02-14-1996', '123456', 0, '155586789', 'Việt Nam', '0586662355', 'banam@gmail.com');
-INSERT INTO dbo.Customer(FULLNAME, USERNAME, DOB, USERPASSWORD, ADMINUSER, IDENTITYNUMBER, ADDRESSCUS, PHONE,EMAIL) 
-VALUES(N'Hoàng Thành Tâm', 'httam','02-11-1995', '123456', 0, '185497562', N'Việt Nam', '0568589856', 'httam@gmail.com');
-INSERT INTO dbo.Customer(FULLNAME, USERNAME, DOB,USERPASSWORD, ADMINUSER, IDENTITYNUMBER, ADDRESSCUS, PHONE,EMAIL) 
-VALUES(N'Vũ Hồng Lan', 'vhlan','04-11-1999', '123456', 0, '185477772', N'Việt Nam', '0562023256', 'vhlan@gmail.com');
+INSERT INTO dbo.Customer(FULLNAME, USERNAME,DOB, USERPASSWORD, IDENTITYNUMBER, ADDRESSCUS, PHONE,EMAIL,GENDER) 
+VALUES(N'Nguyễn Văn Anh', 'nvanh','11/20/1997', '123456', '123456789', N'Việt Nam', '0326312355', 'nvanh@gmail.com',1);
+INSERT INTO dbo.Customer(FULLNAME, USERNAME, DOB,USERPASSWORD, IDENTITYNUMBER, ADDRESSCUS, PHONE,EMAIL,GENDER) 
+VALUES(N'Nguyễn Thành Thắng', 'ntthang','10/08/1998', '123456', '123456777', N'Việt Nam', '0328882355', 'ntthang@gmail.com',0);
+INSERT INTO dbo.Customer(FULLNAME, USERNAME, DOB,USERPASSWORD, IDENTITYNUMBER, ADDRESSCUS, PHONE,EMAIL,GENDER) 
+VALUES(N'Bùi Anh Nam', 'banam','02/14/1996', '123456', '155586789', 'Việt Nam', '0586662355', 'banam@gmail.com',0);
+INSERT INTO dbo.Customer(FULLNAME, USERNAME, DOB, USERPASSWORD, IDENTITYNUMBER, ADDRESSCUS, PHONE,EMAIL,GENDER) 
+VALUES(N'Hoàng Thành Tâm', 'httam','02/11/1995', '123456', '185497562', N'Việt Nam', '0568589856', 'httam@gmail.com',0);
+INSERT INTO dbo.Customer(FULLNAME, USERNAME, DOB,USERPASSWORD, IDENTITYNUMBER, ADDRESSCUS, PHONE,EMAIL,GENDER) 
+VALUES(N'Vũ Hồng Lan', 'vhlan','04/11/1999', '123456', '185477772', N'Việt Nam', '0562023256', 'vhlan@gmail.com',1);
 --category
 INSERT INTO dbo.Category(CategoryName)
 VALUES (N'OPPO');

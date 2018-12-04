@@ -4,7 +4,7 @@ import java.math.*;
 public class Product {
 int ID;
 String ProductName;
-String CategoryID;
+int CategoryID;
 int Quantity;
 Date ReleaseDate;
 int Flag;
@@ -24,10 +24,10 @@ public String getProductName() {
 public void setProductName(String productName) {
 	ProductName = productName;
 }
-public String getCategoryID() {
+public int getCategoryID() {
 	return CategoryID;
 }
-public void setCategoryID(String categoryID) {
+public void setCategoryID(int categoryID) {
 	CategoryID = categoryID;
 }
 public int getQuantity() {
